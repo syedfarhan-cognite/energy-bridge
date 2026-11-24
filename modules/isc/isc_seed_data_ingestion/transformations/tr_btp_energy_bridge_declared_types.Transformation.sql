@@ -1,3 +1,4 @@
+-- fsfwvreverververvrevrv
 SELECT
     cast(externalId as STRING) as externalId,
     '{{ isc_OrganizationalFoundationSchemaSpace }}' as space,
@@ -19,4 +20,3 @@ FROM VALUES
     ('ProductGroup', 'ProductGroup', 'Product group within a product family.', 'ProductHierarchy'),
     ('ProductSubgroup', 'ProductSubgroup', 'Product subgroup within a product group.', 'ProductHierarchy')
     AS t(externalId, name, description, used_by_container)
-    
