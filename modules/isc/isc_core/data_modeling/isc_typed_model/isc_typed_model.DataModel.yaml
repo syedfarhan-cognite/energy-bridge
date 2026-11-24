@@ -40,3 +40,20 @@ views:
   externalId: StorageBin
   version: '{{viewVersion}}'
   type: view
+- space: {{ isc_TypedModelSchemaSpace }}
+  externalId: ProductSector
+  version: '{{viewVersion}}'
+  type: view
+- space: {{ isc_TypedModelSchemaSpace }}
+  externalId: ProductFamily
+  version: '{{viewVersion}}'
+  type: view
+- space: {{ isc_TypedModelSchemaSpace }}
+  externalId: ProductGroup
+  version: '{{viewVersion}}'
+  type: view
+- space: {{ isc_TypedModelSchemaSpace }}
+  externalId: ProductSubgroup
+  version: '{{viewVersion}}'
+  type: view
+
