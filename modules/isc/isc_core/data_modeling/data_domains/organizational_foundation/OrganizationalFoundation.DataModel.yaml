@@ -26,5 +26,5 @@ views:
   type: view
 - space: {{ isc_OrganizationalFoundationSchemaSpace }}
   externalId: ProductHierarchy
-  version: '{{dmVersion}}'
+  version: '{{viewVersion}}'
   type: view
