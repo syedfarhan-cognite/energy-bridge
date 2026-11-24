@@ -31,7 +31,8 @@ jobs:
       # IDP_TENANT_ID, IDP_TOKEN_URL, LOGIN_FLOW, IDP_CLIENT_ID,
       # IDP_CLIENT_SECRET, and any project-specific variables referenced in
       # config.test.yaml / config.prod.yaml, e.g. HIERARCHY_PATH_TRIGGER_CLIENT_ID)
-      CDF_PROJECT: cdf-bootcamp-51-${{ matrix.environment }}
+      # Cognite Toolkit environment variables
+      CDF_PROJECT: cdf-bootcamp-<n>-${{ matrix.environment }} # change <n> to your project number!
       CDF_CLUSTER: westeurope-1
       IDP_TENANT_ID: 16e3985b-ebe8-4e24-9da4-933e21a9fc81
       IDP_TOKEN_URL: https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token
@@ -40,7 +41,6 @@ jobs:
       IDP_CLIENT_SECRET: ${{ secrets.IDP_CLIENT_SECRET }}
       HIERARCHY_PATH_TRIGGER_CLIENT_ID: ${{vars.HIERARCHY_PATH_TRIGGER_CLIENT_ID}}
       IDP_WF_HIERARCHY_PATH_TRIGGER_SECRET: ${{secrets.IDP_WF_HIERARCHY_PATH_TRIGGER_SECRET}}
-      DATA_DEVELOPER_SOURCE_ID: ${{ vars.DATA_DEVELOPER_SOURCE_ID }}
     steps:
       - uses: actions/checkout@v4
       - name: Verify and Update Toolkit Authorization
@@ -49,4 +49,3 @@ jobs:
         run: cdf build --env=${{ matrix.environment }}
       - name: Deploy Toolkit Configurations
         run: cdf deploy
-
